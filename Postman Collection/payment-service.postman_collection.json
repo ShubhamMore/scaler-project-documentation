@@ -1,0 +1,515 @@
+{
+	"info": {
+		"_postman_id": "f081965b-92d0-4406-be4c-13bf8a929534",
+		"name": "payment-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7436649"
+	},
+	"item": [
+		{
+			"name": "payments",
+			"item": [
+				{
+					"name": "status",
+					"item": [
+						{
+							"name": "get Payment Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payments/status/:paymentId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payments",
+										"status",
+										":paymentId"
+									],
+									"variable": [
+										{
+											"key": "paymentId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/payments/status/:paymentId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"payments",
+												"status",
+												":paymentId"
+											],
+											"variable": [
+												{
+													"key": "paymentId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						},
+						{
+							"name": "get Refund Status",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payments/status/refund/:refundId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payments",
+										"status",
+										"refund",
+										":refundId"
+									],
+									"variable": [
+										{
+											"key": "refundId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/payments/status/refund/:refundId",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"payments",
+												"status",
+												"refund",
+												":refundId"
+											],
+											"variable": [
+												{
+													"key": "refundId",
+													"value": "<string>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "<string>"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create Refund",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/payments/createRefund/:orderId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payments",
+								"createRefund",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payments/create-refund/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payments",
+										"create-refund",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"paymentLink\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "create Payment Link",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/payments/createPaymentLink?amount=<double>&currency=<string>&invoiceNo=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payments",
+								"createPaymentLink"
+							],
+							"query": [
+								{
+									"key": "amount",
+									"value": "<double>",
+									"description": "(Required) "
+								},
+								{
+									"key": "currency",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "invoiceNo",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payments/create-paymentLink?amount=<double>&currency=<string>&invoiceNo=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payments",
+										"create-paymentLink"
+									],
+									"query": [
+										{
+											"key": "amount",
+											"value": "<double>"
+										},
+										{
+											"key": "currency",
+											"value": "<string>"
+										},
+										{
+											"key": "invoiceNo",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"paymentLink\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "get Payment Details",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/payments/details/:orderId",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payments",
+								"details",
+								":orderId"
+							],
+							"variable": [
+								{
+									"key": "orderId",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payments/details/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payments",
+										"details",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"status\": \"<string>\",\n  \"paymentLink\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "handle Payment Callback",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/payments/callback?razorpay_payment_id=<string>&razorpay_payment_link_id=<string>&razorpay_payment_link_reference_id=<string>&razorpay_payment_link_status=<string>&razorpay_signature=<string>",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"payments",
+								"callback"
+							],
+							"query": [
+								{
+									"key": "razorpay_payment_id",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "razorpay_payment_link_id",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "razorpay_payment_link_reference_id",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "razorpay_payment_link_status",
+									"value": "<string>",
+									"description": "(Required) "
+								},
+								{
+									"key": "razorpay_signature",
+									"value": "<string>",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/payments/callback?razorpay_payment_id=<string>&razorpay_payment_link_id=<string>&razorpay_payment_link_reference_id=<string>&razorpay_payment_link_status=<string>&razorpay_signature=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"payments",
+										"callback"
+									],
+									"query": [
+										{
+											"key": "razorpay_payment_id",
+											"value": "<string>"
+										},
+										{
+											"key": "razorpay_payment_link_id",
+											"value": "<string>"
+										},
+										{
+											"key": "razorpay_payment_link_reference_id",
+											"value": "<string>"
+										},
+										{
+											"key": "razorpay_payment_link_status",
+											"value": "<string>"
+										},
+										{
+											"key": "razorpay_signature",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "<string>"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:4001",
+			"type": "string"
+		}
+	]
+}

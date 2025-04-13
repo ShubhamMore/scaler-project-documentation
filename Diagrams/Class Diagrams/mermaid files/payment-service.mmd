@@ -1,0 +1,27 @@
+classDiagram
+    BaseModel <|-- Payment
+    
+    class BaseModel {
+        <<abstract>>
+        -Long id
+        -Date created_at
+        -Date updated_at
+        +onCreate() @PrePersist
+        +onUpdate() @PreUpdate
+    }
+    
+    class Payment {
+        -String orderId
+        -String paymentId
+        -String refundId
+        -String status
+        -Double amount
+        -String currency
+        -String invoiceNumber
+        +createPaymentLink()
+        +getPaymentDetails()
+        +verifySignature()
+        +updatePaymentDetails()
+        +createRefund()
+        +fetchRefundStatus()
+    }

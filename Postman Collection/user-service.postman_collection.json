@@ -1,0 +1,900 @@
+{
+	"info": {
+		"_postman_id": "bd5ffb12-e8a1-4346-9e2b-4df6882e56eb",
+		"name": "user-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7436649"
+	},
+	"item": [
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "create User",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Shubham More\",\n  \"email\": \"shubham@gmail.com\",\n  \"password\": \"Admin#123\",\n  \"street\": \"123 Main Street\",\n  \"city\": \"Thane\",\n  \"state\": \"Maharashtra\",\n  \"zipcode\": \"400605\",\n  \"country\": \"INDIA\",\n  \"roles\": [\n    \"ADMIN\",\n    \"USER\",\n    \"SUPER_ADMIN\"\n  ],\n  \"resetPasswordQuestion\": \"What is your favorite color?\",\n  \"resetPasswordAnswer\": \"White\"\n}\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/signUp",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"signUp"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"password\": \"<string>\",\n  \"street\": \"<string>\",\n  \"city\": \"<string>\",\n  \"state\": \"<string>\",\n  \"zipcode\": \"<string>\",\n  \"country\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ],\n  \"resetPasswordQuestion\": \"<string>\",\n  \"resetPasswordAnswer\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9001/users/signup",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"signup"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "reset Password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"email\": \"shubham@gmail.com\",\n  \"resetPasswordQuestion\": \"What is your favorite color?\",\n  \"resetPasswordAnswer\": \"White\",\n  \"newPassword\": \"Admin#123\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/resetPassword",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"resetPassword"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"email\": \"<string>\",\n  \"resetPasswordQuestion\": \"<string>\",\n  \"resetPasswordAnswer\": \"<string>\",\n  \"newPassword\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9001/users/resetpassword",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"resetpassword"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "update User",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"Shubham M\",\n  \"email\": \"shubham@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/users/updateUser/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"updateUser",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ex_6b8\": \"<object>\",\n  \"mollit_7d7\": \"<object>\",\n  \"aliquab8a\": \"<object>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "http://localhost:9001/users/updateuser/:id",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"updateuser",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "remove Role",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/removeRole/2?roleName=ADMIN",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"removeRole",
+								"2"
+							],
+							"query": [
+								{
+									"key": "roleName",
+									"value": "ADMIN",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9001/users/removerole/:id?roleName=<string>",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"removerole",
+										":id"
+									],
+									"query": [
+										{
+											"key": "roleName",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "add Role",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/addRole/2?roleName=ADMIN",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"addRole",
+								"2"
+							],
+							"query": [
+								{
+									"key": "roleName",
+									"value": "ADMIN",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9001/users/addrole/:id?roleName=<string>",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"addrole",
+										":id"
+									],
+									"query": [
+										{
+											"key": "roleName",
+											"value": "<string>"
+										}
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get Users By Email",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/getUser/shubham@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"getUser",
+								"shubham@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9001/users/getuser/:email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"getuser",
+										":email"
+									],
+									"variable": [
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\",\n  \"email\": \"<string>\",\n  \"address\": \"<string>\",\n  \"roles\": [\n    \"<string>\",\n    \"<string>\"\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get Reset Password Question",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/users/getResetPasswordQuestion/shubham@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"getResetPasswordQuestion",
+								"shubham@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "http://localhost:9001/users/getresetpasswordquestion/:email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"getresetpasswordquestion",
+										":email"
+									],
+									"variable": [
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"ex_6b8\": \"<object>\",\n  \"mollit_7d7\": \"<object>\",\n  \"aliquab8a\": \"<object>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "delete User",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/deleteUser/shubham@gmail.com",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"deleteUser",
+								"shubham@gmail.com"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "http://localhost:9001/users/deleteuser/:email",
+									"protocol": "http",
+									"host": [
+										"localhost"
+									],
+									"port": "9001",
+									"path": [
+										"users",
+										"deleteuser",
+										":email"
+									],
+									"variable": [
+										{
+											"key": "email",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:9001",
+			"type": "string"
+		}
+	]
+}

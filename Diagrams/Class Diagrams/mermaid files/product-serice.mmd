@@ -1,0 +1,141 @@
+classDiagram
+    BaseModel <|-- Category
+    BaseModel <|-- Product
+    BaseModel <|-- Cart
+    BaseModel <|-- CartItem
+    BaseModel <|-- Order
+    BaseModel <|-- OrderItem
+    
+    Cart "1" --> "1" User 
+    User "1" --> "1" Cart 
+    Cart "1" --> "*" CartItem 
+    CartItem "*" --> "1" Cart 
+    CartItem "*" --> "1" Product 
+    Order "*" --> "1" User 
+    Order "1" --> "*" OrderItem 
+    OrderItem "*" --> "1" Order 
+    OrderItem "*" --> "1" Product 
+    Product "*" --> "1" Category 
+    
+    Order --> PaymentMethod
+    Order --> PaymentStatus
+    Order --> OrderStatus
+    User --> Roles
+
+    class BaseModel {
+        <<abstract>>
+        -Long id
+        -Date created_at
+        -Date updated_at
+        -boolean isDeleted
+        +onCreate()
+        +onUpdate()
+    }
+    
+    class User {
+        -Long id
+        -String name
+        -String email
+        -String address
+        -List~String~ roles
+    }
+    
+    class Cart {
+        -List~CartItem~ products
+        -User user
+        -double totalPrice
+        +addItemsToCart(Long userId, Long productId, int quantity)
+        +getCartItems(Long userId)
+        +removeItemsFromCart(Long userId, Long cartItemId)
+        +updateItemQuantityInCart(Long userId, Long cartItemId, int updateQuantity)
+        +clearCart(Long userId)
+    }
+    
+    class CartItem {
+        -Product product
+        -int quantity
+        -Cart cart
+    }
+    
+    class Order {
+        -List~OrderItem~ orderItems
+        -User user
+        -double totalAmount
+        -PaymentMethod paymentMethod
+        -PaymentStatus paymentStatus
+        -OrderStatus orderStatus
+        -String trackingNumber
+        -String invoiceNumber
+        -String paymentOrderId
+        -String paymentLink
+        -String paymentId
+        -String refundId
+        +placeOrder(Long userId)
+        +confirmPayment(Long userId, String paymentOrderId)
+        +getOrder(Long orderId)
+        +getAllOrders(Long userId, OrderStatus status)
+        +cancelOrder(Long orderId)
+    }
+    
+    class OrderItem {
+        -Product product
+        -Order order
+        -int quantity
+        -double priceAtPurchase
+    }
+    
+    class Category {
+        -String name
+        +createCategory(CategoryDTO categoryDTO) 
+        +getAllCategories()
+        +getCategoryById(Long id)
+        +getCategoryByName(String categoryName)
+        +updateCategory(Long id, CategoryDTO categoryDTO)
+        +deleteCategory(Long id)
+    }
+    
+    class Product {
+        -Category category
+        -String title
+        -String description
+        -double price
+        -int stockQuantity
+        -double rating
+        +createProduct(CreateProductDTO createProductDTO)
+        +getAllProducts()
+        +getProductById(Long id)
+        +updateProduct(Long id, Map<String, Object> updates)
+        +deleteProduct(Long id)
+    }
+    
+    class PaymentStatus {
+        <<enumeration>>
+        PENDING
+        PAID
+        FAILED
+        REFUNDED
+        CANCELLED
+    }
+    
+    class PaymentMethod {
+        <<enumeration>>
+        ONLINE
+        OFFLINE
+    }
+    
+    class OrderStatus {
+        <<enumeration>>
+        PENDING
+        PLACED
+        CANCELLED
+        FAILED
+    }
+    
+    class Roles {
+        <<enumeration>>
+        ADMIN
+        USER
+        SUPER_ADMIN
+    }
+
+    

@@ -1,0 +1,90 @@
+erDiagram
+    USER ||--o{ CART : has
+    USER ||--o{ ORDER : places
+    USER ||--o{ USER_ROLES : has
+    PRODUCT ||--o{ CART_ITEM : added_to
+    PRODUCT ||--o{ ORDER_ITEM : purchased_in
+    CATEGORY ||--o{ PRODUCT : categorizes
+    CART ||--o{ CART_ITEM : contains
+    ORDER ||--o{ ORDER_ITEM : contains
+ 
+    USER {
+        bigint id PK
+        varchar name
+        varchar email
+        varchar address
+    }
+
+    USER_ROLES {
+        bigint user_id FK
+        varchar roles
+    }
+
+    CART {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        bit is_deleted
+        bigint user_id FK
+        double total_price
+    }
+
+    CART_ITEM {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        bit is_deleted
+        bigint product_id FK
+        int quantity
+        bigint cart_id FK
+    }
+
+    ORDER {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        bit is_deleted
+        bigint user_id FK
+        double total_amount
+        varchar payment_method
+        varchar payment_status
+        varchar order_status
+        varchar tracking_number
+        varchar invoice_number
+        varchar payment_id
+        varchar payment_link
+        varchar payment_order_id
+        varchar refund_id
+    }
+
+    ORDER_ITEM {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        bit is_deleted
+        bigint product_id FK
+        bigint order_id FK
+        int quantity
+        double price_at_purchase
+    }
+
+    PRODUCT {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        bit is_deleted
+        varchar title
+        varchar description
+        double price
+        int stock_quantity
+        double rating
+        bigint category_id FK
+    }
+
+    CATEGORY {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        bit is_deleted
+        varchar name
+    }

@@ -1,0 +1,65 @@
+classDiagram
+    BaseModel <|-- User
+    BaseModel <|-- Role
+    BaseModel <|-- Address
+    BaseModel <|-- Token
+    
+    User "*" --> "*" Role : has
+    Role --> Roles : enum
+    User "1" --> "1" Address : has
+    User "1" --> "*" Token : has
+   
+    class BaseModel {
+        <<abstract>>
+        -Long id
+        -Date created_at
+        -Date updated_at
+    }
+
+      class User {
+        -String name
+        -String email
+        -String hashedPassword
+        -Address address
+        -List~Role~ roles
+        -String resetPasswordQuestion
+        -String resetPasswordAnswer
+        +createUser()
+        +getUserByEmail()
+        +getAllUser()
+        +updateUser()
+        +deleteUser()
+        +resetPassword()
+        +getResetPasswordQuestion()
+        +addRole()
+        +removeRole()
+       
+    }
+    
+    class Address {
+        -String street
+        -String city
+        -String state
+        -String zipcode
+        -String country
+    }
+    
+    class Role {
+        -Roles name
+    }
+    
+    class Roles {
+        <<enumeration>>
+        ADMIN
+        USER
+        SUPER_ADMIN
+    }
+
+    class Token {
+        -User user
+        -String tokenValue
+        -Date expiryDate
+        +generateToken()
+        +validateToken()
+    }
+    

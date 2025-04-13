@@ -1,0 +1,110 @@
+erDiagram
+    USER ||--|| ADDRESS : has
+    USER ||--o{ USER_ROLES : has
+    ROLE ||--o{ USER_ROLES : assigned_to
+    USER ||--o{ TOKEN : has
+    CLIENT ||--o{ AUTHORIZATION : issues
+    CLIENT ||--o{ AUTHORIZATION_CONSENT : requires
+    
+    USER {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        varchar hashed_password
+        varchar email
+        bigint address_id FK
+        varchar name
+        varchar reset_password_question
+        varchar reset_password_answer
+    }
+    
+    ADDRESS {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        varchar street
+        varchar city
+        varchar state
+        varchar zipcode
+        varchar country
+    }
+    
+    ROLE {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        varchar name
+    }
+    
+    USER_ROLES {
+        bigint user_id FK
+        bigint roles_id FK
+    }
+
+     TOKEN {
+        bigint id PK
+        datetime created_at
+        datetime updated_at
+        varchar token_value
+        bigint user_id FK
+        datetime expiry_date
+    }
+    
+    AUTHORIZATION {
+        varchar id PK
+        varchar registered_client_id
+        varchar principal_name
+        varchar authorization_grant_type
+        text authorized_scopes
+        text attributes
+        text state
+        text authorization_code_value
+        timestamp authorization_code_issued_at
+        timestamp authorization_code_expires_at
+        text authorization_code_metadata
+        text access_token_value
+        timestamp access_token_issued_at
+        timestamp access_token_expires_at
+        text access_token_metadata
+        varchar access_token_type
+        text access_token_scopes
+        text refresh_token_value
+        timestamp refresh_token_issued_at
+        timestamp refresh_token_expires_at
+        text refresh_token_metadata
+        text oidc_id_token_value
+        timestamp oidc_id_token_issued_at
+        timestamp oidc_id_token_expires_at
+        text oidc_id_token_metadata
+        text oidc_id_token_claims
+        text user_code_value
+        timestamp user_code_issued_at
+        timestamp user_code_expires_at
+        text user_code_metadata
+        text device_code_value
+        timestamp device_code_issued_at
+        timestamp device_code_expires_at
+        text device_code_metadata
+    }
+    
+    AUTHORIZATION_CONSENT {
+        varchar registered_client_id PK
+        varchar principal_name PK
+        text authorities
+    }
+    
+    CLIENT {
+        varchar id PK
+        varchar client_id
+        timestamp client_id_issued_at
+        varchar client_secret
+        timestamp client_secret_expires_at
+        varchar client_name
+        text client_authentication_methods
+        text authorization_grant_types
+        text redirect_uris
+        text post_logout_redirect_uris
+        text scopes
+        text client_settings
+        text token_settings
+    }

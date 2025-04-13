@@ -1,0 +1,2000 @@
+{
+	"info": {
+		"_postman_id": "9b00b255-29bd-41f1-ab43-309d840a1aad",
+		"name": "product-service",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "7436649"
+	},
+	"item": [
+		{
+			"name": "categories",
+			"item": [
+				{
+					"name": "{id}",
+					"item": [
+						{
+							"name": "get Category By Id",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:9001/oauth2/token",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:9001/oauth2/authorize",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "ADMIN",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "scaler-secret",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "scaler",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": true,
+											"type": "boolean"
+										},
+										{
+											"key": "tokenName",
+											"value": "Token",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "update Category",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:9001/oauth2/token",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:9001/oauth2/authorize",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "ADMIN",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "scaler-secret",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "scaler",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": true,
+											"type": "boolean"
+										},
+										{
+											"key": "tokenName",
+											"value": "Token",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "PUT",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									},
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"name\": \"ELECTRONIC\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories/2",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										"2"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "delete Category",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:9001/oauth2/token",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:9001/oauth2/authorize",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "ADMIN",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "scaler-secret",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "scaler",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": true,
+											"type": "boolean"
+										},
+										{
+											"key": "tokenName",
+											"value": "Token",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/categories/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/categories/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"categories",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "text",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "text/plain"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "get All Categories",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"name\": \"<string>\"\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "create Category",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\": \"ELECTRONIC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/categories",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"categories"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/categories",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"categories"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"name\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "products",
+			"item": [
+				{
+					"name": "product",
+					"item": [
+						{
+							"name": "get Product",
+							"request": {
+								"auth": {
+									"type": "oauth2",
+									"oauth2": [
+										{
+											"key": "accessTokenUrl",
+											"value": "http://localhost:9001/oauth2/token",
+											"type": "string"
+										},
+										{
+											"key": "authUrl",
+											"value": "http://localhost:9001/oauth2/authorize",
+											"type": "string"
+										},
+										{
+											"key": "scope",
+											"value": "ADMIN",
+											"type": "string"
+										},
+										{
+											"key": "clientSecret",
+											"value": "scaler-secret",
+											"type": "string"
+										},
+										{
+											"key": "clientId",
+											"value": "scaler",
+											"type": "string"
+										},
+										{
+											"key": "useBrowser",
+											"value": true,
+											"type": "boolean"
+										},
+										{
+											"key": "tokenName",
+											"value": "Token",
+											"type": "string"
+										},
+										{
+											"key": "addTokenTo",
+											"value": "header",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/product/1",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"product",
+										"1"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/product/:id",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"product",
+												":id"
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "<long>",
+													"description": "(Required) "
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stockQuantity\": \"<integer>\",\n  \"rating\": \"<double>\",\n  \"category\": \"<string>\"\n}"
+								}
+							]
+						},
+						{
+							"name": "get All Products",
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/products/product/all",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"product",
+										"all"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "OK",
+									"originalRequest": {
+										"method": "GET",
+										"header": [
+											{
+												"key": "Accept",
+												"value": "*/*"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/products/product/all",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"products",
+												"product",
+												"all"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "*/*"
+										}
+									],
+									"cookie": [],
+									"body": "[\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stockQuantity\": \"<integer>\",\n    \"rating\": \"<double>\",\n    \"category\": \"<string>\"\n  },\n  {\n    \"id\": \"<long>\",\n    \"title\": \"<string>\",\n    \"description\": \"<string>\",\n    \"price\": \"<double>\",\n    \"stockQuantity\": \"<integer>\",\n    \"rating\": \"<double>\",\n    \"category\": \"<string>\"\n  }\n]"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "create Product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"title\": \"5G Phone\",\n  \"description\": \"Awesome Deal\",\n  \"price\": 10000,\n  \"stockQuantity\": 10,\n  \"rating\": 5,\n  \"category\": \"ELECTRONIC\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/createProduct",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"createProduct"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stockQuantity\": \"<integer>\",\n  \"rating\": \"<double>\",\n  \"category\": \"<string>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/create-product",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"create-product"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stockQuantity\": \"<integer>\",\n  \"rating\": \"<double>\",\n  \"category\": \"<string>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "update Product",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"description\": \"Best Deal \"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/products/updateProduct/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"products",
+								"updateProduct",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"ullamco_e4\": \"<object>\",\n  \"amet_169\": \"<object>\",\n  \"Excepteur786\": \"<object>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/products/update-product/:id",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"products",
+										"update-product",
+										":id"
+									],
+									"variable": [
+										{
+											"key": "id",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"title\": \"<string>\",\n  \"description\": \"<string>\",\n  \"price\": \"<double>\",\n  \"stockQuantity\": \"<integer>\",\n  \"rating\": \"<double>\",\n  \"category\": \"<string>\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "orders",
+			"item": [
+				{
+					"name": "get All Orders",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders?status=PENDING",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders"
+							],
+							"query": [
+								{
+									"key": "status",
+									"value": "PENDING"
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders?status=<string>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders"
+									],
+									"query": [
+										{
+											"key": "status",
+											"value": "<string>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "[\n  {\n    \"orderId\": \"<long>\",\n    \"userId\": \"<long>\",\n    \"status\": \"<string>\",\n    \"orderDate\": \"<dateTime>\",\n    \"paymentMethod\": \"<string>\",\n    \"paymentStatus\": \"<string>\",\n    \"paymentOrderId\": \"<string>\",\n    \"paymentLink\": \"<string>\",\n    \"paymentId\": \"<string>\",\n    \"invoiceNo\": \"<string>\",\n    \"refundId\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"totalAmount\": \"<double>\",\n    \"items\": [\n      {\n        \"id\": \"<long>\",\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"priceAtPurchase\": \"<double>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"priceAtPurchase\": \"<double>\"\n      }\n    ]\n  },\n  {\n    \"orderId\": \"<long>\",\n    \"userId\": \"<long>\",\n    \"status\": \"<string>\",\n    \"orderDate\": \"<dateTime>\",\n    \"paymentMethod\": \"<string>\",\n    \"paymentStatus\": \"<string>\",\n    \"paymentOrderId\": \"<string>\",\n    \"paymentLink\": \"<string>\",\n    \"paymentId\": \"<string>\",\n    \"invoiceNo\": \"<string>\",\n    \"refundId\": \"<string>\",\n    \"trackingNumber\": \"<string>\",\n    \"totalAmount\": \"<double>\",\n    \"items\": [\n      {\n        \"id\": \"<long>\",\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"priceAtPurchase\": \"<double>\"\n      },\n      {\n        \"id\": \"<long>\",\n        \"productId\": \"<long>\",\n        \"productName\": \"<string>\",\n        \"quantity\": \"<integer>\",\n        \"priceAtPurchase\": \"<double>\"\n      }\n    ]\n  }\n]"
+						}
+					]
+				},
+				{
+					"name": "place Order",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/place",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"place"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/place",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										"place"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"orderDate\": \"<dateTime>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"paymentOrderId\": \"<string>\",\n  \"paymentLink\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"invoiceNo\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"totalAmount\": \"<double>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "confirm Payment",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/confirmPayment/Vwd6ezbBQ1CbWcX",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"confirmPayment",
+								"Vwd6ezbBQ1CbWcX"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/confirm-payment/:paymentOrderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										"confirm-payment",
+										":paymentOrderId"
+									],
+									"variable": [
+										{
+											"key": "paymentOrderId",
+											"value": "<string>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"orderDate\": \"<dateTime>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"paymentOrderId\": \"<string>\",\n  \"paymentLink\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"invoiceNo\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"totalAmount\": \"<double>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "cancel Order",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/cancel/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"cancel",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/cancel/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										"cancel",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"orderDate\": \"<dateTime>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"paymentOrderId\": \"<string>\",\n  \"paymentLink\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"invoiceNo\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"totalAmount\": \"<double>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    }\n  ]\n}"
+						}
+					]
+				},
+				{
+					"name": "get Order By Id",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/orders/1",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"orders",
+								"1"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/orders/:orderId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"orders",
+										":orderId"
+									],
+									"variable": [
+										{
+											"key": "orderId",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"orderId\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"status\": \"<string>\",\n  \"orderDate\": \"<dateTime>\",\n  \"paymentMethod\": \"<string>\",\n  \"paymentStatus\": \"<string>\",\n  \"paymentOrderId\": \"<string>\",\n  \"paymentLink\": \"<string>\",\n  \"paymentId\": \"<string>\",\n  \"invoiceNo\": \"<string>\",\n  \"refundId\": \"<string>\",\n  \"trackingNumber\": \"<string>\",\n  \"totalAmount\": \"<double>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"priceAtPurchase\": \"<double>\"\n    }\n  ]\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "carts/cart",
+			"item": [
+				{
+					"name": "get Cart",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/carts/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carts/cart",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts",
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    }\n  ],\n  \"totalPrice\": \"<double>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "add To Cart",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							},
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"productId\": 1,\n  \"quantity\": 5\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{baseUrl}}/carts/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n  \"productId\": \"<long>\",\n  \"quantity\": \"<integer>\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{baseUrl}}/carts/cart",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts",
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    }\n  ],\n  \"totalPrice\": \"<double>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "clear Cart",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/carts/cart",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"cart"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{baseUrl}}/carts/cart",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts",
+										"cart"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "text",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "text/plain"
+								}
+							],
+							"cookie": [],
+							"body": ""
+						}
+					]
+				},
+				{
+					"name": "update Cart",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/carts/cart?cartItemId=1&quantity=3",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"cart"
+							],
+							"query": [
+								{
+									"key": "cartItemId",
+									"value": "1",
+									"description": "(Required) "
+								},
+								{
+									"key": "quantity",
+									"value": "3",
+									"description": "(Required) "
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carts/cart?cartItemId=<long>&quantity=<integer>",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts",
+										"cart"
+									],
+									"query": [
+										{
+											"key": "cartItemId",
+											"value": "<long>"
+										},
+										{
+											"key": "quantity",
+											"value": "<integer>"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    }\n  ],\n  \"totalPrice\": \"<double>\"\n}"
+						}
+					]
+				},
+				{
+					"name": "remove From Cart",
+					"request": {
+						"auth": {
+							"type": "oauth2",
+							"oauth2": [
+								{
+									"key": "accessTokenUrl",
+									"value": "http://localhost:9001/oauth2/token",
+									"type": "string"
+								},
+								{
+									"key": "authUrl",
+									"value": "http://localhost:9001/oauth2/authorize",
+									"type": "string"
+								},
+								{
+									"key": "scope",
+									"value": "ADMIN",
+									"type": "string"
+								},
+								{
+									"key": "clientSecret",
+									"value": "scaler-secret",
+									"type": "string"
+								},
+								{
+									"key": "clientId",
+									"value": "scaler",
+									"type": "string"
+								},
+								{
+									"key": "useBrowser",
+									"value": true,
+									"type": "boolean"
+								},
+								{
+									"key": "tokenName",
+									"value": "Token",
+									"type": "string"
+								},
+								{
+									"key": "addTokenTo",
+									"value": "header",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Accept",
+								"value": "*/*"
+							}
+						],
+						"url": {
+							"raw": "{{baseUrl}}/carts/cart/removeItem/2",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"carts",
+								"cart",
+								"removeItem",
+								"2"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "OK",
+							"originalRequest": {
+								"method": "PATCH",
+								"header": [
+									{
+										"key": "Accept",
+										"value": "*/*"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/carts/cart/removeItem/:cartItemId",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"carts",
+										"cart",
+										"removeItem",
+										":cartItemId"
+									],
+									"variable": [
+										{
+											"key": "cartItemId",
+											"value": "<long>",
+											"description": "(Required) "
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "*/*"
+								}
+							],
+							"cookie": [],
+							"body": "{\n  \"id\": \"<long>\",\n  \"userId\": \"<long>\",\n  \"items\": [\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    },\n    {\n      \"id\": \"<long>\",\n      \"productId\": \"<long>\",\n      \"productName\": \"<string>\",\n      \"quantity\": \"<integer>\",\n      \"price\": \"<double>\"\n    }\n  ],\n  \"totalPrice\": \"<double>\"\n}"
+						}
+					]
+				}
+			]
+		}
+	],
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://localhost:8080",
+			"type": "string"
+		}
+	]
+}
